@@ -2,7 +2,7 @@ name: Scheduled Jobs
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '7 * * * *'
 
 jobs:
   print:
@@ -16,7 +16,7 @@ jobs:
           path: 1Day-1Commit-bot
 
       - name: Set execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x 1Day-1Commit-bot/gradlew  # 경로를 수정
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
