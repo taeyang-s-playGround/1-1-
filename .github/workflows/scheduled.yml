@@ -2,7 +2,7 @@ name: Scheduled Jobs
 
 on:
   schedule:
-    - cron: '35 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   print:
@@ -10,6 +10,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: taeyang-s-playGround/1Day-1Commit-bot
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
+          path: 1Day-1Commit-bot
 
       - name: Set execute permission for gradlew
         run: chmod +x ./gradlew
@@ -25,3 +29,13 @@ jobs:
 
       - name: Build with Gradle Wrapper
         run: ./gradlew build
+
+      - name: Add date and push
+        run: |
+          cd 1Day-1Commit-bot
+          date >> date.txt
+          git add .
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+          git commit -am "feat :: quotes"
+          git push
