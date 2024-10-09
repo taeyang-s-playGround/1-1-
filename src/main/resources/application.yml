@@ -1,0 +1,10 @@
+logging:
+  level:
+    com.example : DEBUG
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+chatgpt:
+  api-key: ${OPEN_AI_KEY:qwertyuiopasdfghjklzxcvbnm}
