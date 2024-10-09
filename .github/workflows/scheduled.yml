@@ -1,8 +1,8 @@
-name: Scheduled Jobs #액션 이름
+name: Scheduled Jobs
 
 on:
   schedule:
-    - cron: '9 * * * *' # 언제 이 액션이 실행될 것인지
+    - cron: '30 * * * *'
 
 jobs:
   print:
