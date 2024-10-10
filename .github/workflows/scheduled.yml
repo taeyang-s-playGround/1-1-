@@ -2,7 +2,7 @@ name: Scheduled Jobs
 
 on:
   schedule:
-    - cron: '59 * * * *'
+    - cron: '48 * * * *'
 
 jobs:
   print:
@@ -26,9 +26,8 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build with Gradle Wrapper
-        run: |
-          cd 1Day-1Commit-bot
-          ./gradlew clean build --exclude-task test
+        run: ./gradlew clean build --exclude-task test
+
 
       - name: Add date and push
         run: |
