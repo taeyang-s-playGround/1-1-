@@ -1,4 +1,4 @@
-
+/*
 name: Scheduled Jobs
 
 on:
@@ -38,4 +38,4 @@ jobs:
           git config --global user.name "ilyoil2"
           git commit -am "feat :: quotes"
           git push
-
+*/
